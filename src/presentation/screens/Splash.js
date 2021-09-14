@@ -21,7 +21,7 @@ export const Splash = () => {
         navigation.dispatch(
           CommonActions.reset({
             index: 0,
-            routes: [{name: 'Home'}],
+            routes: [{name: 'Participants'}],
           }),
         );
       }, 2000);
