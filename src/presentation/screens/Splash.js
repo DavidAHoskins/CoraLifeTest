@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Image} from 'react-native';
 import {useQuery} from '@apollo/client';
 import {useNavigation, CommonActions} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -30,7 +30,14 @@ export const Splash = () => {
 
   /*TODO TASK 02*/
   /*TODO TASK 08*/
-  return <SafeAreaView style={styles.container} edges={['right', 'left']} />;
+  return (<SafeAreaView style={styles.container} edges={['right', 'left']} >
+    <Image 
+      style={{flex:1, width:'90%', margin:'5%'}}
+      resizeMode="contain"
+      resizeMethod="resize"
+      source={require('../../../assets/images/splash.png')}
+                    />
+  </SafeAreaView>);
 };
 
 export default Splash;
