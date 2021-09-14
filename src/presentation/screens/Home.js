@@ -40,13 +40,14 @@ export const Home = () => {
         <FlatList
           style={styles.participantList}
           data={data.characters.results}
-          renderItem={({item}) => (
+          renderItem={({ item, index }) => (
             /*TODO TASK 04*/
-            <TouchableOpacity style={styles.participant}>
+            <TouchableOpacity key={'participant_'+index} style={styles.participant}>
               <Image source={{uri: item.image}} style={styles.image} />
               <Text>{item.name}</Text>
             </TouchableOpacity>
           )}
+          keyExtractor={(item, index) => index.toString()}
         />
       )}
     </SafeAreaView>
