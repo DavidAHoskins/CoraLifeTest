@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Home = () => {
+export const Home = ({navigation}) => {
   const {data} = useQuery(GET_PARTICIPANTS);
 
   /*TODO TASK 03*/
@@ -40,9 +40,13 @@ export const Home = () => {
         <FlatList
           style={styles.participantList}
           data={data.characters.results}
-          renderItem={({ item, index }) => (
+          renderItem={({item, index}) => (
             /*TODO TASK 04*/
-            <TouchableOpacity key={'participant_'+index} style={styles.participant}>
+            <TouchableOpacity 
+              onPress={()=>{navigation.navigate('Participant')}} 
+              key={'participant_'+index} 
+              style={styles.participant}
+              >
               <Image source={{uri: item.image}} style={styles.image} />
               <Text>{item.name}</Text>
             </TouchableOpacity>
