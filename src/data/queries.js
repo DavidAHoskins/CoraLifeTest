@@ -3,9 +3,16 @@ import {gql} from '@apollo/client';
 export const GET_PARTICIPANTS = gql`
   query Characters {
     characters {
+      
       results {
+        species
+        status
+        gender
         name
         image
+        origin {
+          name
+        }
       }
     }
   }

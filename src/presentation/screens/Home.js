@@ -43,7 +43,7 @@ export const Home = ({navigation}) => {
           renderItem={({item, index}) => (
             /*TODO TASK 04*/
             <TouchableOpacity 
-              onPress={()=>{navigation.navigate('Participant')}} 
+              onPress={()=>{navigation.navigate('Participant',{item:item})}} 
               key={'participant_'+index} 
               style={styles.participant}
               >
